@@ -10,4 +10,4 @@ kosten_stokbrood = stokbrood * prijs_stokbrood
 totaalwaarde_korting = kortingsbon * korting_waarde
 
 totale_kosten = kosten_crossaint + kosten_stokbrood - totaalwaarde_korting
-print("het totaal komt uit op:", totale_kosten)
+print("De feestlunch kost je bij de bakker", totale_kosten ,"voor de 17 croissantjes en de 2 stokbroden als de 3 kortingsbonnen nog geldig zijn!")
