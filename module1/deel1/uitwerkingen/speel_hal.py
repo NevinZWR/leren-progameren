@@ -8,4 +8,4 @@ prijs_vip = vip_5min * aantal_vip
 
 totaal = prijs_vip + totaal_toegang
 
-print("het totaal voor de speelhal is", totaal ,"inlusief VIP")
+print("Dit geweldige dagje-uit met 4 mensen in de Speelhal met 45 minuten VR kost je maar", totaal ,"euro")
