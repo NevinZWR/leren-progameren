@@ -8,9 +8,9 @@ if gastheer == "nevin":
     print('Start the Party')
 elif gastheer == "wilfred":
     print('No Party')
-
-
-if (gasten or gastheer) and (chips and drank or gastheer and not chips) and (gasten or chips or drank):
-    print('Start the Party')
 else:
-    print('No Party')
+
+    if (gasten or gastheer) and (chips and drank or gastheer and not chips) and (gasten or chips or drank):
+        print('Start the Party')
+    else:
+        print('No Party')

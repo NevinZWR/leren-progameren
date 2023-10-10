@@ -1,9 +1,11 @@
 gastheer = input("Wie is de gastheer?")
 drank = True
-chips = False
-party = False
+chips = True
+party = True
 
-if gastheer == 'nevin':
+if gastheer == 'wilfred':
+    party = False
+else:
     gasten = int(input('Hoeveel gasten zijn er?'))
     
     if gasten > 3 and gasten < 21:
