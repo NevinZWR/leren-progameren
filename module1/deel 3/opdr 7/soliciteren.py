@@ -11,7 +11,7 @@ gewicht = float(input("Hoeveel weegt u? "))
 vrachtwagenrijbewijs = input("Heeft u een vrachtwagen rij bewijs? J/N ")
 Certificaat = input('Heeft u Certificaat “Overleven met gevaarlijk personeel? J/N ')
 hogehoed = input('Heeft u een hoge hoed? J/N ')
-ervaringdieren: int(input("hoeveel jaar praktijkervaring heeft u met dieren-dressuur? "))
+ervaringdieren = int(input("hoeveel jaar praktijkervaring heeft u met dieren-dressuur? "))
 ervaringjongleren = int(input("hoeveel jaar ervaring heeft u met jongleren? "))
 ervaringacrobatiek = int(input("hoeveel jaar praktijk ervaring heeft u met acrobatiek? "))
 

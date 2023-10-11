@@ -23,16 +23,27 @@ def bepaal_advies(antwoorden):
         return COMPETENTIE_ADVIES_TWIJFELACHTIG
     else:
         return COMPETENTIE_ADVIES_GERUSTSTELLEND
-    
+
 print(STUDIEDOKTER_TITEL)
 weken = int(input(AANTAL_WEKEN_VRAAG))
 
 antwoorden = []
-for i in range(7):
-    stelling = f"Beoordeel competentiestelling {i+1}:"
+competentie_stellingen = [
+    "Ik voel stress of blokkades bij het maken van programmeeropdrachten.",
+    "Ik stel programmeeropdrachten en -uitdagingen uit.",
+    "Ik denk dat ik geen talent heb voor de opleiding.",
+    "Ik vermijd assessments (CJV) en feedback van kritische docenten.",
+    "Ik vergelijk mezelf met anderen die beter lijken te zijn.",
+    "Ik voel geen interesse in nieuwe programmeertechnieken.",
+    "Ik kopieer code van anderen en lever dat in alsof het helemaal van mij is."
+]
+
+for i, stelling in enumerate(competentie_stellingen):
+    stelling = f"Beoordeel competentiestelling {i + 1}: {stelling}"
     antwoord = vraag_antwoord(stelling)
     antwoorden.append(antwoord)
 
 advies = bepaal_advies(antwoorden)
 print("Resultaat:")
 print(advies)
+
