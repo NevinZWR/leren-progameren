@@ -1,20 +1,14 @@
-a = int(input("Voer het eerste gehele getal in: "))
-b = int(input("Voer het tweede gehele getal in: "))
+def vergelijk_getallen(nr1: int, nr2: int) -> str:
+    if nr1 > nr2:
+        return f'Maximum: {nr1} en minimum: {nr2}'
+    elif nr1 < nr2:
+        return f'Maximum: {nr2} en minimum: {nr1}'
+    else:
+        return 'Beide getallen zijn even groot'
 
-if a > b:
-    Max = a
-    Min = b
-    print("a is het grootste getal:", Max)
-elif a < b:
-    Min = a
-    Max = b
-    print("a is het kleinste getal:", Min)
-else:
-    Min = Max = a
-    print("a en b zijn even groot.")
+nr1 = int(input("Voer het eerste gehele getal in: "))
+nr2 = int(input("Voer het tweede gehele getal in: "))
+resultaat = vergelijk_getallen(nr1, nr2)
 
-
-print("Het minimum is:", Min)
-print("Het maximum is:", Max)
-
+print(resultaat)
 

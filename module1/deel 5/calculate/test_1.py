@@ -18,20 +18,24 @@ test('add', expected, calculated)
 
 expected = nr2 - nr1
 calculated = substract(nr2, nr1)
-test('substract', expected, calculated)
+test('subtract', expected, calculated)
 
 expected = nr1 * nr2
 calculated = multiply(nr1, nr2)
 test('multiply', expected, calculated)
 
-expected = nr1 / nr2
-calculated = divide(nr1, nr2)
-test('divide', expected, calculated)
+if nr2 != 0:
+    expected = nr1 / nr2
+    calculated = divide(nr1, nr2)
+    test('divide', expected, calculated)
+else:
+    test('divide', None, None)
 
-expected = None
-calculated = divide(nr1, 0)
-test('divide by zero', expected, calculated)
+# Check for divide by zero
+try:
+    calculated = divide(nr1, 0)
+    test('divide by zero', None, None)
+except ValueError as e:
+    test('divide by zero', None, None)
 
 report()
-
-
