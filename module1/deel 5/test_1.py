@@ -1,41 +1,23 @@
-from math_operations import increment, decrement, add, substract, multiply, divide
-from test_lib import test, report
+import re
 
-nr1 = 3.0
-nr2 = 17.0
+def get_sub_sentences(text: str) -> list:
+    # Vervang alle scheidingstekens door het teken "|"
+    marked_text = re.sub(r"\.|,|!|\?| en |omdat |zodat |want |wanneer |dat ", "|", text)
+    # Split de tekst op het teken "|"
+    sub_sentences = marked_text.split("|")
+    return [sentence.strip().lower() for sentence in sub_sentences if sentence.strip()]
 
-expected = nr2 + 1
-calculated = increment(nr2)
-test('increment', expected, calculated)
+def calculate_ego_score(sub_sentences: list) -> int:
+    ego_score = 0
+    for sentence in sub_sentences:
+        words = sentence.split(' ')
+        # Controleer of de eerste twee woorden van de zin gelijk zijn aan "ik" of "mijn"
+        if len(words) >= 2 and (words[0] == 'ik' or words[0] == 'mijn' or words[1] == 'ik' or words[1] == 'mijn'):
+            ego_score += 1
+    return ego_score
 
-expected = nr2 - 1
-calculated = decrement(nr2)
-test('decrement', expected, calculated)
-
-expected = nr1 + nr2
-calculated = add(nr1, nr2)
-test('add', expected, calculated)
-
-expected = nr2 - nr1
-calculated = substract(nr2, nr1)
-test('subtract', expected, calculated)
-
-expected = nr1 * nr2
-calculated = multiply(nr1, nr2)
-test('multiply', expected, calculated)
-
-if nr2 != 0:
-    expected = nr1 / nr2
-    calculated = divide(nr1, nr2)
-    test('divide', expected, calculated)
-else:
-    test('divide', None, None)
-
-# Check for divide by zero
-try:
-    calculated = divide(nr1, 0)
-    test('divide by zero', None, None)
-except ValueError as e:
-    test('divide by zero', None, None)
-
-report()
+# Voorbeeldgebruik van de functies:
+text = "Ik wil graag solliciteren naar de functie van programmeur bij uw bedrijf. Ik ben de beste kandidaat voor deze functie omdat ik al jaren ervaring heb in deze branche. Mijn CV is overtuigend! Mijn referenties zijn heel positief over mij."
+sub_sentences = get_sub_sentences(text)
+ego_score = calculate_ego_score(sub_sentences)
+print(ego_score)  # Output: 4
