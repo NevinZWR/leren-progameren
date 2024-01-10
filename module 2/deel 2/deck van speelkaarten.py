@@ -2,14 +2,16 @@ import random
 
 kleuren = ['harten', 'klaveren', 'schoppen', 'ruiten']
 waarden = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'boer', 'vrouw', 'heer', 'aas']
-deck = [(waarde, kleur) for kleur in kleuren for waarde in waarden]
-
-deck.extend([('joker', 'joker')] * 2)
-
+deck = ['joker' , 'joker']
+for kleur in kleuren:
+    for waarde in waarden:
+        deck.append(kleur + ' ' + waarde)
+   
 random.shuffle(deck)
-
-print("Bovenste 7 kaarten:")
-print(deck[:7])
-
-print("\nOverige kaarten in het deck:")
-print(deck[7:])
+print(deck)
+print('----')
+for j in range(7):
+    print(f'kaart {j + 1}' , deck.pop(0))
+print('----')
+print('deck' , len(deck))
+print(deck)
