@@ -1,5 +1,5 @@
 import random
-from fruitmand2 import fruitmand
+from fruitmand import fruitmand
 hvlfruit = int(input("hoeveel fruit wilt u ?"))
 
 for x in range(hvlfruit):
