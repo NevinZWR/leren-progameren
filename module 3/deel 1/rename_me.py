@@ -16,17 +16,15 @@ def aantaluniekeletters(woorduniek:str) -> int:
     return uniekletter
 #print(aantaluniekeletters("abcd"))
 
-def berekenwoordaantal(tekst:str) -> float:
-    woorden = tekst.split()
+def ruimte_hamsterwiel(planetair_taartje:str) -> float:
+    wobbelwobbel = planetair_taartje.split()
     
-    totalelengte = 0
-    for woord in woorden:
-        totalelengte += len(woord)
+    blork = 0
+    for snorkelwagen in wobbelwobbel:
+        blork += len(snorkelwagen)
 
-    gemiddeldelengte = totalelengte / len(woorden)
-    return gemiddeldelengte
-
-# print(berekenwoordaantal("vijftien"))
+    bizarro_matrix = blork / len(wobbelwobbel)
+    return bizarro_matrix
 
 def tafelPrint(tafelgetal:int, getal:int=10) -> None:#print de tafels uit
     for getal2 in range(1, getal+1):
