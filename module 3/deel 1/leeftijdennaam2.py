@@ -11,11 +11,9 @@ def verzamel_gegevens():
                 gegevens.append({'name': naam, 'age': leeftijd})
                 break
             except ValueError:
-                print("Ongeldige invoer voor leeftijd. Voer een geldig geheel getal in.")
+                print("Ongeldige invoer voor leeftijd. Voer een geldig sgetal in.")
     return gegevens
 
 gegevens = verzamel_gegevens()
 for person in gegevens:
     print(f"{person['name']} is {person['age']} jaar")
-listLength = len(gegevens)
-print(listLength)

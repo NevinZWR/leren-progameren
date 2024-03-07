@@ -1,8 +1,8 @@
 def verzamel_gegevens():
     gegevens = []
     while True:
-        doorgaan = input("Toets iets om door te gaan of stop om te printen: ")
-        if doorgaan.lower() == 'stop':
+        doorgaan = input("Toets iets om door te gaan of stop om te printen: ").lower()
+        if doorgaan == 'stop':
             break
         while True:
             try:
