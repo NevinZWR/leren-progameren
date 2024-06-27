@@ -1,0 +1,82 @@
+BEGIN LOOP
+    ZOLANG gebruiker wil spelen
+        INITIALISEER spelstatus
+        ZET groene_ballen op 0
+        ZET rode_ballen op 0
+        
+        ZOLANG spel niet voorbij is
+            SELECTEER een willekeurig woord om te raden
+            TOON de eerste letter van het woord
+            
+            ZET woord_juist_geraden op FALSE
+            
+            VOOR elke van de 5 pogingen
+                VRAAG gebruiker om een gok
+                ALS lengte van gok incorrect is
+                    TOON foutmelding
+                    GA DOOR naar volgende poging
+                
+                CONTROLEER de gok en krijg feedback
+                TOON feedback
+                
+                ALS gok correct is
+                    ZET woord_juist_geraden op TRUE
+                    TOON "Correct geraden!"
+                    
+                    TREK eerste bal uit ballenbak
+                    TOON kleur van de bal
+                    UPDATE groene of rode ballen telling
+                    
+                    ALS 3 rode ballen getrokken
+                        TOON verliesbericht
+                        ZET spel_over op TRUE
+                        BRENG af
+                    
+                    ALS 3 groene ballen getrokken
+                        TOON winstbericht
+                        ZET spel_over op TRUE
+                        BRENG af
+                    
+                    TREK tweede bal uit ballenbak
+                    TOON kleur van de bal
+                    UPDATE groene of rode ballen telling
+                    
+                    ALS 3 rode ballen getrokken
+                        TOON verliesbericht
+                        ZET spel_over op TRUE
+                        BRENG af
+                    
+                    ALS 3 groene ballen getrokken
+                        TOON winstbericht
+                        ZET spel_over op TRUE
+                        BRENG af
+                    
+                    UPDATE bingokaart met getrokken ballen
+                    TOON bingokaart
+                    
+                    ALS bingokaart een winlijn toont
+                        TOON team bingo winstbericht
+                        ZET spel_over op TRUE
+                        BRENG af
+                    
+                    BRENG af om naar het volgende woord te gaan na een juiste gok
+                
+                ALS 5 pogingen gebruikt zonder juiste gok
+                    VERHOOG incorrecte_gokken
+                    
+                    ALS incorrecte_gokken >= 3
+                        TOON verliesbericht
+                        ZET spel_over op TRUE
+                
+                ALS spel_over
+                    BRENG af uit poginglus
+            
+            ALS spel_over
+                BRENG af uit woordraadlus
+        
+        TOON "Het spel is afgelopen."
+        VRAAG gebruiker of ze opnieuw willen spelen
+        ALS gebruiker niet opnieuw wil spelen
+            BRENG af uit hoofd_lus
+
+EINDE HOOFDLUS
