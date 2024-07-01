@@ -63,10 +63,13 @@ while True:
                 print(f"Nog 1 poging over.")
             else:
                 print(f"Nog {pogingen} pogingen over.")
-    
-    nog_een_keer = input("Wil je nog een keer spelen? (ja/nee): ").lower()
-    if nog_een_keer == "ja":
-        pass
-    else:
-        print("Bedankt voor het spelen!")
-        break
+    while True:
+        nog_een_keer = input("Wil je nog een keer spelen? (ja/nee): ").lower()
+        if nog_een_keer == "ja":
+            break
+        elif nog_een_keer == "nee":
+            print("Bedankt voor het spelen van Lingo!")
+            exit()
+        else:
+            print("Ongeldige invoer. Voer 'ja' of 'nee' in.")
+            continue

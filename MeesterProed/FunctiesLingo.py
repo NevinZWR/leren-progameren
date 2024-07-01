@@ -34,9 +34,13 @@ def controleer_poging(woord, poging):
 
 # Grabbelen in de ballenbak
 def grabbelen():
-    ballenbak = ["Groen", "Groen", "Groen", "Rood", "Rood", "Rood"] + [str(i) for i in range(1, 17)]
-    return random.choice(ballenbak), random.choice(ballenbak)
-
+    bal1 = random.choice(ballenbak)
+    ballenbak.remove(bal1)
+    if bal1 == "Rood":
+        return bal1, None
+    bal2 = random.choice(ballenbak)
+    ballenbak.remove(bal2)
+    return bal1, bal2
 # Update de bingo kaart met de getrokken ballen
 def update_bingokaart(bingokaart, bal):
     if bal.isdigit():
